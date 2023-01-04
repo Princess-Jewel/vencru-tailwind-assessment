@@ -11,7 +11,7 @@ const linkClass =
 
 export default function Sidebar() {
   return (
-    <div className="bg-sidebar-bg w-72 px-[24px] py-[32px] flex flex-col text-black">
+    <div className="overflow-hidden bg-sidebar-bg w-72 p-[24px] flex flex-col text-black hidden md:block">
       {/* LOGO SECTION */}
       <div className="w-[143px] h-[32px] cursor-pointer ">
         <img

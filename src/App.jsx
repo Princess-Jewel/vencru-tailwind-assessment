@@ -10,10 +10,12 @@ import Settings from "./pages/Settings";
 import Home from "./pages/Home";
 import "./App.css";
 
+
 function App() {
   return (
     <Router>
       <Routes>
+    
         <Route element={<Layout />}>
           <Route path="/home" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />

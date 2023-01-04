@@ -4,6 +4,7 @@ import CustomRadioButton from "../components/Shared/CustomRadioButton";
 import PaymentCard from "../components/Shared/PaymentCard";
 import { CARD_DETAILS } from "../lib/consts/card-details";
 
+
 const Settings = () => {
   const [checked, setChecked] = useState(false);
   const [checkedValue, setCheckedValue] = useState([]);
@@ -20,6 +21,7 @@ const Settings = () => {
 
   return (
     <div className="font-display">
+    
       {/* HEADER */}
       <div className="flex justify-start flex-col">
         <h2 className="md:text-3xl text-2xl font-medium text-aside-text">
@@ -42,8 +44,8 @@ const Settings = () => {
         <p className=" py-2.5 hover:bg-white">API</p>
       </div> */}
 
-   {/* PAYMENT METHOD */}
-   <div className="pb-5">
+      {/* PAYMENT METHOD */}
+      <div className="pb-5">
         <h2 className="text-lg font-medium text-aside-text pb-1">
           Payment method
         </h2>
@@ -144,9 +146,9 @@ const Settings = () => {
 
         {/* MAIN TABLE */}
         <div>
-          <table className="table-auto w-full ">
+          <table className="table-auto w-full">
             <thead>
-              <tr className=" ">
+              <tr>
                 <th className="flex gap-3 text-xs font-medium text-search-text items-center text-center px-6 py-3">
                   <input
                     type="checkbox"
@@ -171,7 +173,6 @@ const Settings = () => {
                 <th className="text-xs font-medium text-search-text text-center px-6 py-3">
                   Users on plan
                 </th>
-                
               </tr>
             </thead>
             <tbody className="bg-white items-start text-start divide-y divide-divider">
@@ -192,7 +193,7 @@ const Settings = () => {
                   </td>
                   <td className="px-6 py-4 hover:bg-dashboard-link-bg text-center">
                     <span className="px-1.5 py-0.5 whitespace-nowrap text-center text-xs mx-auto font-medium text-status flex justify-center items-center  gap-1 rounded-2xl bg-status-bg w-[55px] h-[22px] ">
-                      {" "}
+                    
                       {link.status === "paid" && (
                         <img
                           src="https://res.cloudinary.com/dpqxraalv/image/upload/v1672785978/check_naysrm.svg"
@@ -214,7 +215,7 @@ const Settings = () => {
                     ))}
                   </td>
                   <td className="hover:bg-dashboard-link-bg text-center">
-                    {" "}
+                 
                     <img
                       src="https://res.cloudinary.com/dpqxraalv/image/upload/v1672774421/Icon_1_p6dna9.svg"
                       alt="download icon"
@@ -225,12 +226,12 @@ const Settings = () => {
             </tbody>
           </table>
         </div>
-      
       </div>
 
-
-    {/* BILLING HISTORY MOBILE VIEW*/}
-      <div className="block md:hidden"> {/* HEADER */}
+      {/* BILLING HISTORY MOBILE VIEW*/}
+      <div className="block md:hidden">
+      
+        {/* HEADER */}
         <div className="flex flex-col md:flex-row gap-3">
           <h2 className="flex-1 text-lg font-medium text-aside-text">
             Billing history
@@ -244,9 +245,8 @@ const Settings = () => {
             Download all
           </button>
         </div>
-
-         {/* MAIN TABLE */}
-         <div>
+        {/* MAIN TABLE */}
+        <div>
           <table className="table-auto w-full ">
             <thead>
               <tr className=" ">
@@ -265,8 +265,6 @@ const Settings = () => {
                 <th className="text-xs font-medium text-search-text text-center px-6 py-3">
                   Amount
                 </th>
-              
-                
               </tr>
             </thead>
             <tbody className="bg-white items-start text-start divide-y divide-divider">
@@ -282,14 +280,12 @@ const Settings = () => {
                   <td className="px-6 py-4 whitespace-nowrap text-center text-xs font-medium text-search-text hover:bg-dashboard-link-bg">
                     {link.amount}
                   </td>
-                
-                
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-        </div>
+      </div>
     </div>
   );
 };

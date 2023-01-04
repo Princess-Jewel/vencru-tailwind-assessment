@@ -1,21 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
+import Navbar from "../Navbar";
+import MobileMenu from "./MobileMenu";
 import Sidebar from "./Sidebar";
 // import Header from "./Header";
 
 const Layout = () => {
+  const [showSideBar, setShowSideBar] = useState(false);
   return (
-    <div className="md:flex md:flex-row flex-none bg-neutral-100 h-screen w-screen md:overflow-hidden overflow-y-auto overflow-x-hidden">
-      {/* <Sidebar /> */}
+    // md:flex md:flex-row flex-none
+    <>
+      {showSideBar ? (
+        ""
+      ) : (
+        <Navbar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
+      )}
+      <div className="flex bg-neutral-100 h-screen w-screen overflow-hidden overflow-y-auto overflow-x-hidden">
+        {showSideBar ? <MobileMenu /> : <Sidebar />}
 
-      {/* <div className=" flex-1 "> */}
-				<div className="md:flex md:flex-col flex-none md:flex-1 p-4 min-h-0 overflow-y-auto overflow-x-hidden md:p-8 bg-dashboard-link-bg">
-					<Outlet />
-				</div>
-			{/* </div> */}
-    </div>
+        {/* <div className=" flex-1 "> */}
+        {/* md:flex md:flex-col flex-none md:flex-1 */}
+        {showSideBar ? (
+          <p onClick={() => setShowSideBar(false)} className="absolute top-[5px] right-[20px] text-5xl">x</p>
+        ) : (
+          <div className="w-full pl-4 pb-4 pr-4 pt-[32px] min-h-0 overflow-y-auto  overflow-x-hidden md:p-8 bg-dashboard-link-bg">
+            <Outlet />
+          </div>
+        )}
+        {/* </div> */}
+      </div>
+    </>
   );
 };
 
 export default Layout;
-
