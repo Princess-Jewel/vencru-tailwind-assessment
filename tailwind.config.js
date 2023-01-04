@@ -18,7 +18,9 @@ module.exports = {
         'shadow': '0px 1px 2px rgba(16, 24, 40, 0.05)',
         'status': '#027A48',
         'status-bg':'#ECFDF3',
-        'payment-card':'#D6BBFB'
+        'payment-card':'#D6BBFB',
+        'payment-bg':'#F9F5FF'
+        
       },
       fontFamily: {
         display: ['Lato', 'sans-serif'],

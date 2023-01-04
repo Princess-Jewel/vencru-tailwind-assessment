@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 
 const PaymentCard = ({
   cardEnding,
@@ -8,10 +9,21 @@ const PaymentCard = ({
   onChange,
   name,
   label,
-
+  checkedValue,
+  onClick
 }) => {
+  const linkClass =
+    "flex justify-between w-full p-4 items-start border rounded-lg cursor-pointer";
   return (
-    <div className=" flex justify-between w-full bg-white p-4 items-start border border-divider rounded-lg cursor-pointer ">
+    <div
+      className={classNames(
+        checkedValue.length === 0
+          ? "bg-white border border-divider"
+          : "bg-payment-bg border border-payment-card",
+        linkClass
+      )}
+      onClick={onClick}
+    >
       <div className=" flex flex-1 gap-5">
         <img src={card} alt="card logo" className="w-[46px] h-[32px]" />
 
@@ -32,7 +44,7 @@ const PaymentCard = ({
         </div>
       </div>
 
-      <label for={label}>
+      <label htmlFor={label}>
         <input
           type="checkbox"
           name={name}

@@ -5,15 +5,14 @@ import Sidebar from "./Sidebar";
 
 const Layout = () => {
   return (
-    <div className="flex flex-row bg-neutral-100 h-screen w-screen overflow-hidden">
-      <Sidebar />
-      {/* <Header /> */}
-      <div className="flex flex-col flex-1 bg-dashboard-link-bg">
-				{/* <Header /> */}
-				<div className="flex-1 p-4 min-h-0 overflow-auto p-8">
+    <div className="md:flex md:flex-row flex-none bg-neutral-100 h-screen w-screen md:overflow-hidden overflow-y-auto overflow-x-hidden">
+      {/* <Sidebar /> */}
+
+      {/* <div className=" flex-1 "> */}
+				<div className="md:flex md:flex-col flex-none md:flex-1 p-4 min-h-0 overflow-y-auto overflow-x-hidden md:p-8 bg-dashboard-link-bg">
 					<Outlet />
 				</div>
-			</div>
+			{/* </div> */}
     </div>
   );
 };
