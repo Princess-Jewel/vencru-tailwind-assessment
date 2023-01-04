@@ -7,13 +7,13 @@ import { Link, useLocation } from "react-router-dom";
 import classNames from "classnames";
 
 const linkClass =
-  "flex items-center gap-2 font-bold px-3 py-2 hover:bg-dashboard-link-bg hover:no-underline active:bg-dashboard-link-bg font-display";
+  "flex items-start gap-2 font-bold py-3 hover:bg-dashboard-link-bg hover:no-underline active:bg-dashboard-link-bg font-display";
 
 export default function Sidebar() {
   return (
     <div className="bg-sidebar-bg w-72 px-[24px] py-[32px] flex flex-col text-black">
       {/* LOGO SECTION */}
-      <div className="w-[143px] h-[32px] ">
+      <div className="w-[143px] h-[32px] cursor-pointer ">
         <img
           src="https://res.cloudinary.com/dpqxraalv/image/upload/v1672742885/Logo_gw6ulu.svg"
           alt="logo"
@@ -45,7 +45,7 @@ export default function Sidebar() {
         </div>
 
         {/* CARD SECTION */}
-        <div className="px-[16px] py-[20px] bg-dashboard-link-bg rounded-lg">
+        <div className="px-[16px] py-[20px] bg-dashboard-link-bg rounded-lg cursor-pointer">
           <div className="flex justify-start items-start flex-col">
             <p className="text-aside-text text-sm font-medium">
               New features available!
@@ -69,7 +69,7 @@ export default function Sidebar() {
       </div>
 
       {/* FOOTER SECTION */}
-      <div className="font-display border-t border-divider flex justify-between gap-2 content-center mt-6 pt-2 pb-6">
+      <div className="font-display border-t border-divider flex justify-between gap-2 content-center mt-6 py-6 cursor-pointer">
         <div className="w-[40px] h-[40px]">
           <img
             src="https://res.cloudinary.com/dpqxraalv/image/upload/v1672757146/Avatar_zp5kbl.svg"
@@ -109,6 +109,11 @@ function SidebarLink({ link }) {
     >
       <img src={link.icon} alt={link.label} />
       {link.label}
+      {link.notifications && (
+        <p className="rounded-2xl bg-notification-bg px-2.5 py-0.5 text-sm font-medium ml-20 text-dashboard-link-text font-display">
+          {link.notifications}
+        </p>
+      )}
     </Link>
   );
 }
