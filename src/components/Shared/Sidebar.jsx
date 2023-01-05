@@ -11,7 +11,7 @@ const linkClass =
 
 export default function Sidebar() {
   return (
-    <div className="overflow-hidden bg-sidebar-bg w-72 p-[24px] flex flex-col text-black hidden md:block">
+    <div className="overflow-hidden bg-sidebar-bg w-80 p-[24px] flex flex-col text-black hidden md:block">
       {/* LOGO SECTION */}
       <div className="w-[143px] h-[32px] cursor-pointer ">
         <img
@@ -20,11 +20,11 @@ export default function Sidebar() {
         />
       </div>
       {/* SEARCH SECTION */}
-      <div className="py-[10px] my-[24px] flex items-start rounded-lg px-[16px] duration-300 cursor-pointer bg-white text-search-text border border-search-border">
-        {/* <i className="bi bi-search text-sm"></i> */}
+      <div className="py-[10px] my-[24px] relative flex items-start rounded-lg px-[16px] duration-300 cursor-pointer bg-white text-search-text border border-search-border">
+       <img src="https://res.cloudinary.com/dpqxraalv/image/upload/v1672877167/Icon_4_f5c9le.svg" className="absolute top-[12px] left-[16px]" alt="search icon" />
         <input
           type="text"
-          className="text-[16px] w-full bg-transparent focus:outline-none font-display "
+          className="text-[16px] w-full bg-transparent pl-[24px] focus:outline-none font-display "
           placeholder="Search"
         />
       </div>

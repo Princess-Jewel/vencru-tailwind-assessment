@@ -10,9 +10,7 @@ const Navbar = ({ showSideBar, setShowSideBar }) => {
         />
       </div>
 
-      {showSideBar ? (
-        <p onClick={() => setShowSideBar(false)}>prin</p>
-      ) : (
+      {!showSideBar && (
         <div
           className="w-[24px] h-[24px] cursor-pointer"
           onClick={() => setShowSideBar(true)}

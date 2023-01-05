@@ -33,7 +33,7 @@ const Settings = () => {
       </div>
 
       {/* TABS */}
-      {/* <div className="grid grid-cols-8 divide-x-2 divide-search-border-200 cursor-pointer border border-search-border rounded-lg mt-6 mb-8 text-sm font-medium text-center text-dashboard-link-text w-[769px] ">
+      <div className="grid grid-cols-8 divide-x-2 divide-search-border-200 cursor-pointer border border-search-border rounded-lg mt-6 mb-8 text-sm font-medium text-center text-dashboard-link-text w-[769px] ">
         <p className=" py-2.5 hover:bg-white">Profile</p>
         <p className=" py-2.5 hover:bg-white">Password</p>
         <p className=" py-2.5 hover:bg-white">Team</p>
@@ -42,7 +42,7 @@ const Settings = () => {
         <p className=" py-2.5 hover:bg-white">Notifications</p>
         <p className=" py-2.5 hover:bg-white">Integrations</p>
         <p className=" py-2.5 hover:bg-white">API</p>
-      </div> */}
+      </div>
 
       {/* PAYMENT METHOD */}
       <div className="pb-5">
