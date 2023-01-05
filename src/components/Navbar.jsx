@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = ({ showSideBar, setShowSideBar }) => {
   return (
-    <nav className="p-4 bg-white h-[63px] border border-b border-divider block md:hidden flex justify-between items-center ">
+    <nav className="p-4 bg-white h-[63px] border border-b border-divider md:hidden flex justify-between items-center ">
       <div className="w-[143px] h-[32px] cursor-pointer ">
         <img
           src="https://res.cloudinary.com/dpqxraalv/image/upload/v1672742885/Logo_gw6ulu.svg"
