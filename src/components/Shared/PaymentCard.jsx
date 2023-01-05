@@ -1,5 +1,5 @@
 import React from "react";
-import classNames from "classnames";
+
 
 const PaymentCard = ({
   cardEnding,
@@ -10,18 +10,15 @@ const PaymentCard = ({
   name,
   label,
   checkedValue,
-  onClick
+  onClick,
 }) => {
-  const linkClass =
-    "flex justify-between w-full p-4 items-start border rounded-lg cursor-pointer";
   return (
     <div
-      className={classNames(
-        checkedValue.length === 0
-          ? "bg-white border border-divider"
-          : "bg-payment-bg border border-payment-card",
-        linkClass
-      )}
+      className={
+        !checkedValue.includes(name)
+          ? "bg-white  border-divider flex justify-between w-full p-4 items-start border rounded-lg cursor-pointer"
+          : "bg-payment-bg  border-payment-card flex justify-between w-full p-4 items-start border rounded-lg cursor-pointer"
+      }
       onClick={onClick}
     >
       <div className=" flex flex-1 gap-5">
@@ -29,17 +26,46 @@ const PaymentCard = ({
 
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
-            <p className="text-dashboard-link-text font-medium text-sm">
+            <p
+              className={
+                !checkedValue.includes(name)
+                  ? " text-dashboard-link-text font-medium text-sm"
+                  : "text-highlighted font-medium text-sm"
+              }
+            >
               {cardEnding}
             </p>
-            <p className="font-normal text-sm text-search-text">{expire}</p>
+
+            <p
+              className={
+                !checkedValue.includes(name)
+                  ? " text-search-text font-normal text-sm"
+                  : "text-highlighted font-normal text-sm"
+              }
+            >
+              {expire}
+            </p>
           </div>
 
           <div className="flex gap-2 justify-start items-center">
-            <p className="text-search-text font-medium text-sm">
+            <p
+              className={
+                !checkedValue.includes(name)
+                  ? " text-search-text font-medium text-sm"
+                  : "text-highlighted font-medium text-sm"
+              }
+            >
               Set as default
             </p>
-            <p className=" font-medium text-sm text-aside-aside">Edit</p>
+            <p
+              className={
+                !checkedValue.includes(name)
+                  ? " font-medium text-sm text-aside-aside"
+                  : "text-highlighted font-medium text-sm"
+              }
+            >
+              Edit
+            </p>
           </div>
         </div>
       </div>

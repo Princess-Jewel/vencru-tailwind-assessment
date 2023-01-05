@@ -4,99 +4,51 @@ export const BILLING_HISTORY = [
 		invoice: 'Basic Plan – Dec 2022',
 		amount: 'USD $10.00',
         date:'Dec 1, 2022',
-		status: 'paid'
+		status: 'Paid'
 	},
     {
 		id: 2,
 		invoice: 'Basic Plan – Dec 2022',
 		amount: 'USD $10.00',
         date:'Dec 1, 2022',
-		status: 'paid'
+		status: 'Paid'
 	},
     {
 		id: 3,
 		invoice: 'Basic Plan – Dec 2022',
 		amount: 'USD $10.00',
         date:'Dec 1, 2022',
-		status: 'paid'
+		status: 'Paid'
 	},
     {
 		id: 4,
 		invoice: 'Basic Plan – Dec 2022',
 		amount: 'USD $10.00',
         date:'Dec 1, 2022',
-		status: 'paid'
+		status: 'Paid'
 	},
     {
 		id: 5,
 		invoice: 'Basic Plan – Dec 2022',
 		amount: 'USD $10.00',
         date:'Dec 1, 2022',
-		status: 'paid'
+		status: 'Paid'
 	},
  {
 		id: 6,
 		invoice: 'Basic Plan – Dec 2022',
 		amount: 'USD $10.00',
         date:'Dec 1, 2022',
-		status: 'paid'
+		status: 'Paid'
 	},
     {
 		id: 7,
 		invoice: 'Basic Plan – Dec 2022',
 		amount: 'USD $10.00',
         date:'Dec 1, 2022',
-		status: 'paid'
+		status: 'Paid'
 	},
-    {
-		id: 8,
-		invoice: 'Basic Plan – Dec 2022',
-		amount: 'USD $10.00',
-        date:'Dec 1, 2022',
-		status: 'paid'
-	},
-    {
-		id: 9,
-		invoice: 'Basic Plan – Dec 2022',
-		amount: 'USD $10.00',
-        date:'Dec 1, 2022',
-		status: 'paid'
-	},
-    {
-		id: 10,
-		invoice: 'Basic Plan – Dec 2022',
-		amount: 'USD $10.00',
-        date:'Dec 1, 2022',
-		status: 'paid'
-	},
-    {
-		id: 11,
-		invoice: 'Basic Plan – Dec 2022',
-		amount: 'USD $10.00',
-        date:'Dec 1, 2022',
-		status: 'paid'
-	},
-    {
-		id: 12,
-		invoice: 'Basic Plan – Dec 2022',
-		amount: 'USD $10.00',
-        date:'Dec 1, 2022',
-		status: 'paid'
-	},
- {
-		id: 13,
-		invoice: 'Basic Plan – Dec 2022',
-		amount: 'USD $10.00',
-        date:'Dec 1, 2022',
-		status: 'paid'
-	},
-    {
-		id: 14,
-		invoice: 'Basic Plan – Dec 2022',
-		amount: 'USD $10.00',
-        date:'Dec 1, 2022',
-		status: 'paid'
-	},
+    
 ]
 
 export const IMAGE_ARRAY = [

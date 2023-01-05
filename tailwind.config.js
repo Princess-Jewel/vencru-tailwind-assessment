@@ -19,7 +19,9 @@ module.exports = {
         'status': '#027A48',
         'status-bg':'#ECFDF3',
         'payment-card':'#D6BBFB',
-        'payment-bg':'#F9F5FF'
+        'payment-bg':'#F9F5FF',
+        'highlighted':'#53389E',
+        'hamburger':'#979da7'
         
       },
       fontFamily: {

@@ -4,24 +4,34 @@ import CustomRadioButton from "../components/Shared/CustomRadioButton";
 import PaymentCard from "../components/Shared/PaymentCard";
 import { CARD_DETAILS } from "../lib/consts/card-details";
 
+const TABS = [
+  "My details",
+  "Profile",
+  "Password",
+  "Team",
+  "Plan",
+  "Billing",
+  "Notifications",
+  "Integrations",
+  "API",
+];
 
 const Settings = () => {
   const [checked, setChecked] = useState(false);
   const [checkedValue, setCheckedValue] = useState([]);
-  const handleCheck = event => {
-    var updatedList = [...checkedValue];
-    if (event.target.checked) {
-      updatedList = [...checkedValue, event.target.value];
+
+  const handleCheck = name => {
+    let updatedList = [...checkedValue];
+    if (checkedValue.includes(name)) {
+      updatedList = updatedList.filter(item => item !== name);
     } else {
-      updatedList.splice(checkedValue.indexOf(event.target.value), 1);
+      updatedList = [...checkedValue, name];
     }
     setCheckedValue(updatedList);
-    console.log(checkedValue);
   };
 
   return (
     <div className="font-display">
-    
       {/* HEADER */}
       <div className="flex justify-start flex-col">
         <h2 className="md:text-3xl text-2xl font-medium text-aside-text">
@@ -33,15 +43,15 @@ const Settings = () => {
       </div>
 
       {/* TABS */}
-      <div className="grid grid-cols-8 divide-x-2 divide-search-border-200 cursor-pointer border border-search-border rounded-lg mt-6 mb-8 text-sm font-medium text-center text-dashboard-link-text w-[769px] ">
-        <p className=" py-2.5 hover:bg-white">Profile</p>
-        <p className=" py-2.5 hover:bg-white">Password</p>
-        <p className=" py-2.5 hover:bg-white">Team</p>
-        <p className=" py-2.5 hover:bg-white">Plan</p>
-        <p className=" py-2.5 hover:bg-white">Billing</p>
-        <p className=" py-2.5 hover:bg-white">Notifications</p>
-        <p className=" py-2.5 hover:bg-white">Integrations</p>
-        <p className=" py-2.5 hover:bg-white">API</p>
+      <div className="overflow-x-auto mb-8">
+        <div
+          className="flex divide-x-2 divide-search-border-200 cursor-pointer border border-search-border rounded-lg mt-6 text-sm font-medium text-center text-dashboard-link-text w-[769px] 
+			"
+        >
+          {TABS.map(tab => (
+            <Tab key={tab} title={tab} />
+          ))}
+        </div>
       </div>
 
       {/* PAYMENT METHOD */}
@@ -83,7 +93,7 @@ const Settings = () => {
 
           <input
             type="text"
-            className="ml-[30px] mt-[10px] bg-white rounded-lg text-base text-search-text font-normal border border-search-border w-[319px] md:w-[488px] h-[44px] pl-6 shadow shadow-shadow"
+            className="ml-[30px] mt-[10px] bg-white rounded-lg text-base text-search-text font-normal border border-search-border w-[270px] md:w-[488px] h-[44px] pl-3 shadow shadow-shadow"
           />
         </div>
       </div>
@@ -106,11 +116,12 @@ const Settings = () => {
               cardEnding={link.cardEnding}
               expire={link.expire}
               card={link.card}
-              onChange={handleCheck}
+              onChange={() => handleCheck(link.id)}
               label={link.cardName}
               name={link.id}
               checkedValue={checkedValue}
-              onClick={handleCheck}
+              onClick={() => handleCheck(link.id)}
+              checked={checkedValue.includes(link.id)}
             />
           ))}
 
@@ -144,9 +155,9 @@ const Settings = () => {
           </button>
         </div>
 
-        {/* MAIN TABLE */}
+        {/* MAIN TABLE DESKTOP VIEW*/}
         <div>
-          <table className="table-auto w-full">
+          <table className="table-auto w-full border border-divider rounded-lg shadow-lg mt-[25px]">
             <thead>
               <tr>
                 <th className="flex gap-3 text-xs font-medium text-search-text items-center text-center px-6 py-3">
@@ -193,8 +204,7 @@ const Settings = () => {
                   </td>
                   <td className="px-6 py-4 hover:bg-dashboard-link-bg text-center">
                     <span className="px-1.5 py-0.5 whitespace-nowrap text-center text-xs mx-auto font-medium text-status flex justify-center items-center  gap-1 rounded-2xl bg-status-bg w-[55px] h-[22px] ">
-                    
-                      {link.status === "paid" && (
+                      {link.status === "Paid" && (
                         <img
                           src="https://res.cloudinary.com/dpqxraalv/image/upload/v1672785978/check_naysrm.svg"
                           alt="check icon"
@@ -214,12 +224,13 @@ const Settings = () => {
                       />
                     ))}
                   </td>
-                  <td className="hover:bg-dashboard-link-bg text-center">
-                 
-                    <img
-                      src="https://res.cloudinary.com/dpqxraalv/image/upload/v1672774421/Icon_1_p6dna9.svg"
-                      alt="download icon"
-                    />
+                  <td className="hover:bg-dashboard-link-bg text-center px-6">
+                    <div className="flex items-center justify-center">
+                      <img
+                        src="https://res.cloudinary.com/dpqxraalv/image/upload/v1672774421/Icon_1_p6dna9.svg"
+                        alt="download icon"
+                      />
+                    </div>
                   </td>
                 </tr>
               ))}
@@ -230,8 +241,6 @@ const Settings = () => {
 
       {/* BILLING HISTORY MOBILE VIEW*/}
       <div className="block md:hidden">
-      
-        {/* HEADER */}
         <div className="flex flex-col md:flex-row gap-3">
           <h2 className="flex-1 text-lg font-medium text-aside-text">
             Billing history
@@ -245,9 +254,9 @@ const Settings = () => {
             Download all
           </button>
         </div>
-        {/* MAIN TABLE */}
+
         <div>
-          <table className="table-auto w-full ">
+          <table className="table-auto w-full shadow-lg border border-divider rounded-lg mt-[25px]">
             <thead>
               <tr className=" ">
                 <th className="flex gap-3 text-xs font-medium text-search-text items-center text-center px-6 py-3">
@@ -291,3 +300,14 @@ const Settings = () => {
 };
 
 export default Settings;
+
+// Tabs Component
+const Tab = ({ title, cls = "" }) => {
+  return (
+    <p
+      className={`py-2.5 px-1.5 hover:bg-white first-of-type:hover:rounded-lg last-of-type:hover:rounded-lg last-of-type:hover:rounded-l-none flex-1 ${cls}`}
+    >
+      {title}
+    </p>
+  );
+};

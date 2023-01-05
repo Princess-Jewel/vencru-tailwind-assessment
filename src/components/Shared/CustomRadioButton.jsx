@@ -1,6 +1,5 @@
 import React from "react";
 
-// Customize to fit your design
 export default function CustomRadioButton({
   defaultChecked,
   label,

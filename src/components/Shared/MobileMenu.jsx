@@ -1,14 +1,10 @@
 import React from "react";
 import { DASHBOARD_SIDEBAR_LINKS } from "../../lib/consts/navigation";
 import { Link, useLocation } from "react-router-dom";
-import classNames from "classnames";
-
-const linkClass =
-  "flex items-start gap-2 font-bold py-3 hover:bg-dashboard-link-bg hover:no-underline active:bg-dashboard-link-bg font-display";
 
 export default function MobileMenu() {
   return (
-    <div className="overflow-hidden bg-sidebar-bg w-5/6 p-[24px] flex flex-col text-black block md:hidden">
+   <div className="overflow-hidden bg-sidebar-bg w-80 p-[24px] flex flex-col text-black md:hidden ">
       {/* LOGO SECTION */}
       <div className="w-[143px] h-[32px] cursor-pointer ">
         <img
@@ -43,17 +39,19 @@ function SidebarLink({ link }) {
   return (
     <Link
       to={link.path}
-      className={classNames(
+      className={
         pathname === link.path
-          ? "bg-dashboard-link-bg text-black"
-          : "text-dashboard-link-text",
-        linkClass
-      )}
+          ? "bg-dashboard-link-bg text-black flex items-start gap-2 font-bold py-3 hover:bg-dashboard-link-bg hover:no-underline active:bg-dashboard-link-bg font-display"
+          : "text-dashboard-link-text flex items-start gap-2 font-bold py-3 hover:bg-dashboard-link-bg hover:no-underline active:bg-dashboard-link-bg font-display"
+      }
     >
       <img src={link.icon} alt={link.label} />
       {link.label}
       {link.notifications && (
-        <p className="rounded-2xl bg-notification-bg px-2.5 py-0.5 text-sm font-medium ml-20 text-dashboard-link-text font-display">
+        <p
+          className="rounded-2xl bg-notification-bg px-2.5 py-0.5 text-sm font-medium text-dashboard-link-text font-display ml-auto
+				flex-shrink-0"
+        >
           {link.notifications}
         </p>
       )}
