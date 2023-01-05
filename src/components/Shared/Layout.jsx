@@ -13,11 +13,11 @@ const Layout = () => {
       ) : (
         <Navbar showSideBar={showSideBar} setShowSideBar={setShowSideBar} />
       )}
-      <div className="flex bg-[#858c98] h-screen w-screen overflow-hidden overflow-y-auto overflow-x-hidden">
+      <div className="flex bg-[#858c98] h-screen w-screen overflow-hidden overflow-y-auto overflow-x-hidden ">
         {showSideBar ? <MobileMenu /> : <Sidebar />}
         {showSideBar ? (
           <div
-            className="absolute top-[18px] right-[10px] cursor-pointer rounded-lg block md:hidden  bg-hamburger px-[15px]"
+            className="absolute top-[18px] right-[5px] cursor-pointer rounded-lg block md:hidden  bg-hamburger px-[15px]"
             onClick={() => setShowSideBar(false)}
           >
             <p className=" text-3xl text-center text-white font-display mb-[5px]">
